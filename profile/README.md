@@ -1,6 +1,6 @@
 # 👑 Nhóm Trùm Mobile - CN01
 
-**Trùm Mobile - CN01** là nhóm sinh viên **lớp CN01, Khoa Khoa học Máy tính – Trường Đại học Bách Khoa TP.HCM**, với định hướng **phát triển ứng dụng di động thông minh** phục vụ học tập và đời sống sinh viên.
+**Trùm Mobile - CN01** là nhóm sinh viên **lớp CN01, Ngành Khoa học Máy tính – Trường Đại học Bách Khoa TP.HCM**, với định hướng **phát triển ứng dụng di động thông minh** hỗ trợ việc học tập của sinh viên.
 
 Nhóm gồm 4 thành viên:
 - [Nguyễn Phước Ngọc Hương](https://github.com/MinaNguyen17)
