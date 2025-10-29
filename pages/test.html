@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapdeCours - App Showcase</title>
+    <!-- Tải Tailwind CSS để đơn giản hóa styling và đảm bảo responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* CSS TÙY CHỈNH VÀ BỘ MÀU CỦA BẠN */
+        :root {
+            --color-accent: #42160D;
+            /* Đỏ/Nâu đậm */
+            --color-background: #FFF8E3;
+            /* Trắng kem */
+            --color-text-dark: #343a40;
+            --color-light-accent: #f0e6c5;
+            /* Màu nhấn nhạt cho nền */
+        }
+
+        body {
+            background-color: var(--color-background);
+            color: var(--color-text-dark);
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Khung điện thoại (Mobile Mockup Frame) */
+        .phone-frame {
+            width: 300px;
+            height: 600px;
+            background-color: #1a1a1a;
+            border: 12px solid #1a1a1a;
+            border-radius: 40px;
+            box-shadow: 0 0 0 1px #fff, 0 0 0 8px var(--color-accent), 0 20px 50px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            /* Màn hình app */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* CSS cho Page 1: Hero */
+        .logo-camera {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: var(--color-light-accent);
+            border: 3px solid var(--color-accent);
+            box-shadow: 0 5px 15px rgba(66, 22, 13, 0.2);
+        }
+
+        /* CSS cho Video Section */
+        .video-container {
+            position: relative;
+            width: 100%;
+            /* Tỷ lệ 16:9 (9/16 * 100%) */
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(66, 22, 13, 0.3);
+            border: 4px solid var(--color-accent);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation (Cố định ở trên cùng) -->
+    <nav class="bg-white/70 backdrop-blur-md shadow-sm fixed w-full top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="text-xl font-extrabold text-[--color-accent]">CapdeCours</a>
+                <div class="space-x-4">
+                    <!-- Điều hướng cuộn mượt mà -->
+                    <a href="#intro" class="text-sm font-medium hover:text-[--color-accent]">Giới thiệu App</a>
+                    <a href="#video-demo" class="text-sm font-medium hover:text-[--color-accent]">Video Demo</a>
+                    <a href="#process" class="text-sm font-medium hover:text-[--color-accent]">Quy trình 3 Bước</a>
+                    <a href="#instructions" class="text-sm font-medium hover:text-[--color-accent]">Hướng dẫn Mockup</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16">
+        <!-- PAGE 1: GIỚI THIỆU APP (Tương tự ảnh 1) -->
+        <section id="intro" class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Phần giới thiệu bên trái -->
+                <div>
+                    <div class="logo-camera mb-6 flex items-center justify-center">
+                        <!-- Icon Camera đơn giản (SVG inline) -->
+                        <svg class="w-12 h-12 text-[--color-accent]" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 15a3 3 0 100-6 3 3 0 000 6z"></path>
+                            <path fill-rule="evenodd"
+                                d="M3 6a3 3 0 013-3h12a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3V6zm3-1a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V6a1 1 0 00-1-1H6zM12 9a6 6 0 100 12 6 6 0 000-12zM12 18a3 3 0 100-6 3 3 0 000 6z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-5xl font-extrabold mb-3 text-[--color-accent]">CapdeCours</h1>
+                    <p class="text-2xl font-semibold mb-6 text-gray-600">Snap Fast. Save Smart. Find Easy.</p>
+                    <p class="text-lg text-gray-700 leading-relaxed max-w-md">
+                        CapdeCours là ứng dụng di động được thiết kế để giúp sinh viên chụp và tổ chức ảnh bài giảng dễ
+                        dàng. Với khả năng phân loại thông minh dựa trên thời khóa biểu, nó tự động sắp xếp ảnh theo môn
+                        học và buổi học, giúp việc xem lại và học tập sau này trở nên thuận tiện hơn.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="mt-8 space-x-4">
+                        <!-- Nút cuộn xuống Video Demo -->
+                        <a href="#video-demo"
+                            class="bg-[--color-accent] text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:opacity-90 transition inline-block">Xem
+                            Video Demo</a>
+                        <button
+                            class="border border-[--color-accent] text-[--color-accent] font-bold py-3 px-6 rounded-lg hover:bg-[--color-accent] hover:text-white transition">Tải
+                            xuống (Beta)</button>
+                    </div>
+                </div>
+
+                <!-- Phần Mockup điện thoại bên phải -->
+                <div class="flex justify-center lg:justify-end">
+                    <div id="mockup-page1" class="phone-frame scale-90 lg:scale-100">
+                        <div class="phone-screen">
+                            <img id="screen-page1"
+                                src="https://placehold.co/300x600/42160D/FFF8E3?text=Trang+Chu+CapdeCours"
+                                alt="Mockup trang chủ" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === VIDEO DEMO SECTION === -->
+        <section id="video-demo" class="max-w-7xl mx-auto px-4 py-16 bg-[--color-light-accent] rounded-xl shadow-inner">
+            <h2 class="text-center text-4xl font-extrabold text-[--color-accent] mb-10">Video Demo Tính năng Cốt lõi
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <!-- Khung Video Responsive 16:9 -->
+                <div class="video-container">
+                    <!-- THAY THẾ [VIDEO ID CỦA BẠN] BẰNG MÃ NHÚNG YOUTUBE/VIMEO -->
+                    <iframe id="video-frame" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <p class="text-center text-gray-600 mt-4 text-lg">Xem cách ứng dụng tự động sắp xếp và phân loại bài
+                    giảng chỉ trong vài giây.</p>
+            </div>
+        </section>
+        <!-- ============================== -->
+
+        <!-- PAGE 2: QUY TRÌNH 3 BƯỚC (Tương tự ảnh 2) -->
+        <section id="process" class="max-w-7xl mx-auto px-4 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-[--color-accent] mb-4">From capture to classification</h2>
+                <p class="text-5xl font-extrabold text-gray-800">In 3 steps</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Phần mô tả 3 bước -->
+                <div class="space-y-12">
+                    <!-- Bước 1: Capture -->
+                    <div class="flex items-start space-x-4">
+                        <div
+                            class="text-3xl font-bold text-white bg-[--color-accent] w-10 h-10 flex items-center justify-center rounded-full flex-shrink-0">
+                            1</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-[--color-accent] mb-1">Capture: Chụp ảnh nhanh</h3>
+                            <p class="text-gray-600">Dùng camera tích hợp của CapdeCours để chụp bài giảng ngay tức thì.
+                                Ảnh được lưu trữ tạm thời trong ứng dụng.</p>
+                        </div>
+                    </div>
+                    <!-- Bước 2: Smart Save -->
+                    <div class="flex items-start space-x-4">
+                        <div
+                            class="text-3xl font-bold text-white bg-[--color-accent] w-10 h-10 flex items-center justify-center rounded-full flex-shrink-0">
+                            2</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-[--color-accent] mb-1">Smart Save: Phân loại thông minh
+                            </h3>
+                            <p class="text-gray-600">Hệ thống tự động so sánh vị trí, thời gian chụp với thời khóa biểu
+                                để gán nhãn môn học và buổi học chính xác.</p>
+                        </div>
+                    </div>
+                    <!-- Bước 3: Find Easy -->
+                    <div class="flex items-start space-x-4">
+                        <div
+                            class="text-3xl font-bold text-white bg-[--color-accent] w-10 h-10 flex items-center justify-center rounded-full flex-shrink-0">
+                            3</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-[--color-accent] mb-1">Find Easy: Tìm kiếm dễ dàng</h3>
+                            <p class="text-gray-600">Tất cả ảnh đã được sắp xếp vào thư mục. Dùng thanh tìm kiếm để tra
+                                cứu ảnh theo môn học hoặc ngày trong vài giây.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phần Mockup điện thoại -->
+                <div class="flex justify-center space-x-4">
+                    <!-- Mockup 1: Capture -->
+                    <div id="mockup-page2-1" class="phone-frame scale-75">
+                        <div class="phone-screen">
+                            <img id="screen-page2-1" src="https://placehold.co/300x600/42160D/FFF8E3?text=B1:+Chup+Anh"
+                                alt="Mockup bước 1" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <!-- Mockup 2: Save Smart -->
+                    <div id="mockup-page2-2" class="phone-frame scale-75 -translate-y-6">
+                        <div class="phone-screen">
+                            <img id="screen-page2-2" src="https://placehold.co/300x600/42160D/FFF8E3?text=B2:+Phan+Loai"
+                                alt="Mockup bước 2" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <!-- Mockup 3: Find Easy -->
+                    <div id="mockup-page2-3" class="phone-frame scale-75">
+                        <div class="phone-screen">
+                            <img id="screen-page2-3" src="https://placehold.co/300x600/42160D/FFF8E3?text=B3:+Tim+Kiem"
+                                alt="Mockup bước 3" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HƯỚNG DẪN CHÈN MOCKUP -->
+        <section id="instructions" class="max-w-7xl mx-auto px-4 py-16 bg-gray-100/50 rounded-lg mt-12">
+            <h2 class="text-3xl font-bold mb-4 text-[--color-accent]">Hướng dẫn Chèn Ảnh Mockup và Video</h2>
+            <p class="mb-4">Tất cả các phần nội dung và Mockup đã được gộp lại trong một trang. Bạn có thể cuộn xuống để
+                xem toàn bộ. Hãy thay thế các đường dẫn dưới đây:</p>
+
+            <h3 class="text-xl font-semibold mb-2">1. Thay thế Ảnh trên Trang Giới thiệu (Hero)</h3>
+            <p class="text-gray-600">Tìm thẻ <code>&lt;img&gt;</code> sau và thay thế URL trong thuộc tính
+                <code>src</code>.</p>
+            <pre
+                class="bg-gray-200 p-3 rounded-md text-sm overflow-x-auto"><code>&lt;img id="screen-page1" src="[ĐƯỜNG DẪN MOCKUP CỦA BẠN]" alt="Mockup trang chủ" ...&gt;</code></pre>
+
+            <h3 class="text-xl font-semibold mb-2 mt-4">2. Thay thế Ảnh Quy trình 3 Bước</h3>
+            <p class="text-gray-600">Thay thế URL trong thuộc tính <code>src</code> của ba thẻ <code>&lt;img&gt;</code>:
+            </p>
+            <pre class="bg-gray-200 p-3 rounded-md text-sm overflow-x-auto"><code>&lt;img id="screen-page2-1" src="[ĐƯỜNG DẪN BƯỚC 1 CỦA BẠN]" ...&gt;
+&lt;img id="screen-page2-2" src="[ĐƯỜNG DẪN BƯỚC 2 CỦA BẠN]" ...&gt;
+&lt;img id="screen-page2-3" src="[ĐƯỜNG DẪN BƯỚC 3 CỦA BẠN]" ...&gt;</code></pre>
+
+            <h3 class="text-xl font-semibold mb-2 mt-4">3. Chèn Video Demo</h3>
+            <p class="text-gray-600">Thay thế URL trong thuộc tính <code>src</code> của thẻ <code>&lt;iframe&gt;</code>
+                trong phần Video Demo. (Nhớ thay **Video ID** của bạn vào đó)</p>
+            <pre
+                class="bg-gray-200 p-3 rounded-md text-sm overflow-x-auto"><code>&lt;iframe id="video-frame" src="https://www.youtube.com/embed/[VIDEO ID CỦA BẠN]?controls=0" ...&gt;&lt;/iframe&gt;</code></pre>
+
+            <p class="text-sm text-red-600 mt-2">**Mẹo:** Nút "Xem Video Demo" ở Hero Section đã được liên kết để cuộn
+                mượt mà đến phần video.</p>
+        </section>
+    </main>
+
+    <!-- JavaScript để xử lý cuộn mượt mà -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Cuộn mượt mà khi nhấp vào các liên kết trong nav
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

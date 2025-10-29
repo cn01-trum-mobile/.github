@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="vi" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapdeCours</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* CSS TÙY CHỈNH VÀ BỘ MÀU MỚI */
+        :root {
+            --et-card-bg: #6E4A3E;
+            /* Nền Card Đậm (Màu nhấn chính) */
+            --et-bg-light: #FFF8E3;
+            /* Nền Chính (Trắng kem) */
+            --et-text-dark: #343a40;
+            /* Màu chữ mặc định trên nền sáng */
+            --et-accent-text: #E0E0E0;
+            /* Màu chữ trên nền card đậm */
+            --et-primary-color: #6E4A3E;
+            /* Màu cho nút và tiêu đề nổi bật */
+            --et-border-color: #e0e0e0;
+            /* Màu viền trên nền sáng */
+            --et-red-color: #AC3C00;
+        }
+
+        body {
+            background-color: var(--et-bg-light) !important;
+            color: var(--et-text-dark) !important;
+        }
+
+        /* 1. HEADER & HERO SECTION (Tương tự ảnh 1) */
+        .hero-section {
+            /* Đã thay đổi điểm bắt đầu gradient từ #FFE697 và điểm kết thúc là màu nền chính */
+            background: linear-gradient(0deg, #FFE697 0%, var(--et-bg-light) 100%);
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--et-red-color);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #6c757d;
+            max-width: 700px;
+        }
+
+        .et-btn-primary {
+            background-color: var(--et-primary-color) !important;
+            border-color: var(--et-primary-color) !important;
+            color: #ffffff !important;
+            font-weight: bold;
+            padding: 10px 30px;
+        }
+
+        .et-btn-secondary {
+            border-color: var(--et-red-color) !important;
+            color: var(--et-red-color) !important;
+            font-weight: bold;
+            padding: 10px 30px;
+        }
+
+        .et-btn-secondary:hover {
+            background-color: var(--et-red-color) !important;
+            color: #ffffff !important;
+        }
+
+        .et-btn-secondary2 {
+            border-color: var(--et-red-color) !important;
+            color: var(--et-red-color) !important;
+            font-weight: bold;
+        }
+
+        .et-btn-secondary2:hover {
+            background-color: var(--et-red-color) !important;
+            color: #ffffff !important;
+        }
+
+        /* 2. CONTENT SECTION (Tương tự ảnh 2) */
+        .content-section {
+            background-color: var(--et-bg-light);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+        }
+
+        .content-section h2 {
+            /* Thêm đường phân cách màu nhấn phụ */
+            border-bottom: 3px solid var(--et-accent-secondary);
+            padding-bottom: 15px;
+        }
+
+        .et-dark-card {
+            background-color: var(--et-card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            /* Border Vàng Đồng nhạt */
+            border-radius: 12px;
+            padding: 30px;
+            text-align: left;
+            height: 100%;
+            color: var(--et-accent-text);
+
+            /* Đổ bóng nhẹ và hiệu ứng chuyển động */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .et-dark-card:hover {
+            /* Nâng card nhẹ lên khi di chuột */
+            transform: translateY(-5px);
+            /* Tăng cường đổ bóng */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            /* Có thể làm sáng nhẹ nền card */
+            background-color: #552117;
+            /* Màu đậm hơn một chút */
+        }
+
+        .et-btn-primary:hover {
+            /* Nâng card nhẹ lên khi di chuột */
+            transform: translateY(-3px);
+            /* Tăng cường đổ bóng */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            /* Có thể làm sáng nhẹ nền card */
+            background-color: #552117;
+            /* Màu đậm hơn một chút */
+        }
+
+        .et-dark-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+            /* Tiêu đề trắng */
+        }
+
+        .et-dark-card p {
+            color: var(--et-accent-text);
+        }
+
+        .icon-placeholder {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Icon nhạt */
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--et-accent-secondary);
+            /* Icon màu Vàng Đồng */
+            font-size: 1.8rem;
+            /* Tăng kích thước icon lên một chút */
+        }
+
+        /* Khung điện thoại (Mobile Mockup Frame) */
+        .phone-frame {
+            width: 375px;
+            /* Chiều rộng cố định */
+            height: 812px;
+            background-color: #1a1a1a;
+            border: 12px solid #1a1a1a;
+            border-radius: 40px;
+            box-shadow: 0 0 0 1px #fff, 0 0 0 8px var(--color-accent), 0 20px 50px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            /* Màn hình app */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* CSS cho Video Section */
+        .video-container {
+            position: relative;
+            width: 100%;
+            /* Tỷ lệ 16:9 (9/16 * 100%) */
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(66, 22, 13, 0.3);
+            border: 4px solid var(--color-accent);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="border-bottom sticky-top" style="background-color: var(--et-bg-light);">
+        <nav class="navbar navbar-expand-lg container-xl py-3">
+            <img src="./assests/images/logo.png" height="50" class="px-2" alt="Logo">
+            <a class="navbar-brand fw-bold fs-4" style="color: var(--et-red-color);" href="index.html">CapdeCours</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="product.html">Product</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link text-dark" href="#">Solutions</a></li> -->
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a class="btn et-btn-secondary2 me-2"
+                        href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Docs</a>
+                    <a class="btn et-btn-primary" href="https://github.com/cn01-trum-mobile/BTL-App-development">Github
+                        Repo</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="hero-section">
+        <!-- ĐÃ SỬA: Bỏ d-flex ở đây, dùng align-items-start để căn nội dung lên trên -->
+        <div class="container-xl row align-items-start mx-auto g-5">
+
+            <!-- CỘT 1: VĂN BẢN VÀ LOGO -->
+            <div class="col-lg-6 d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start">
+
+                <div class="d-flex flex-column align-items-center mb-4">
+                    <img src="./assests/images/logo.png" alt="logo" height="100" width="100" class="mb-3">
+                    <h1 class="hero-title text-[--color-accent] text-4xl font-extrabold">CapdeCours</h1>
+                    <h2 class="hero-title text-black fs-2 text-3xl font-bold">Chụp nhanh - Lưu gọn - Tìm dễ</h2>
+                </div>
+
+                <p class="hero-subtitle mb-5">
+                    CapdeCours là ứng dụng di động được thiết kế để giúp sinh viên chụp và tổ chức ảnh bài giảng dễ
+                    dàng. Với khả năng phân loại thông minh dựa trên thời khóa biểu, nó tự động sắp xếp ảnh theo môn
+                    học và buổi học, giúp việc xem lại và học tập sau này trở nên thuận tiện hơn.
+                </p>
+
+                <div class="d-grid gap-3 d-sm-flex mb-5 justify-content-center justify-content-lg-start w-100">
+                    <a class="btn et-btn-primary btn-lg px-4" href="index.html">Explore the Story</a>
+                    <a class="btn et-btn-secondary btn-lg px-4"
+                        href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Read the Docs</a>
+                </div>
+            </div>
+
+            <!-- CỘT 2: MOCKUP ĐIỆN THOẠI -->
+            <div class="col-lg-6 d-flex justify-content-center">
+                <div id="mockup-page1" class="phone-frame">
+                    <div class="phone-screen">
+                        <img id="screen-page1" src="./assests/images/Home.png" alt="Mockup trang chủ" class="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="container-xl">
+            <h2 class="text-dark">Core Feature</h2>
+            <img src="./assests/images/onboarding.png" alt="onboarding" class="img-fluid">
+        </div>
+
+        </div>
+    </section>
+    <section class="content-section">
+
+        <div class="container-xl">
+
+            <div class="text-center mb-12">
+                <h2 class="text-dark">From capture to classification</h2>
+            </div>
+
+            <div class="row g-4 mb-5">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="et-dark-card">
+                        <div class="icon-placeholder">1</div>
+                        <h3>Capture: Chụp ảnh nhanh</h3>
+                        <p>
+                            Dùng camera tích hợp của CapdeCours để chụp bài giảng ngay tức thì.
+                            Ảnh được lưu trữ tạm thời trong ứng dụng.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="et-dark-card">
+                        <div class="icon-placeholder">2</i></div>
+                        <h3>Smart Save: Phân loại thông minh</h3>
+                        <p>Hệ thống tự động so sánh vị trí, thời gian chụp với thời khóa biểu
+                            để gán nhãn môn học và buổi học chính xác.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="et-dark-card">
+                        <div class="icon-placeholder">3</div>
+                        <h3>Find Easy: Tìm kiếm dễ dàng</h3>
+                        <p>Tất cả ảnh đã được sắp xếp vào thư mục. Dùng thanh tìm kiếm để tra
+                            cứu ảnh theo môn học hoặc ngày trong vài giây.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row m-0 p-0">
+
+                <div class="d-flex justify-content-between col-lg-4 col-md-12 align-items-center mt-4">
+                    <!-- Mockup 1: Capture -->
+                    <div id="mockup-page2-1" class="phone-frame">
+                        <div class="phone-screen">
+                            <img id="screen-page2-1" src="./assests/images/Photo-taking.png" alt="Mockup bước 1"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="d-flex justify-content-between col-lg-4 col-md-12 align-items-center mt-4">
+                    <!-- Mockup 2: Save Smart -->
+                    <div id="mockup-page2-2" class="phone-frame">
+                        <div class="phone-screen">
+                            <img id="screen-page2-2" src="./assests/images/Photo-taken.png" alt="Mockup bước 2"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between col-lg-4 col-md-12 align-items-center mt-4">
+                    <!-- Mockup 3: Find Easy -->
+                    <div id="mockup-page2-3" class="phone-frame">
+                        <div class="phone-screen">
+                            <img id="screen-page2-3" src="./assests/images/Photo-saved.png" alt="Mockup bước 3"
+                                class="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+        </div>
+    </section>
+
+    <section class="hero-section">
+        <div class="containter-xl">
+            <img src="./assests/images/gallery.png" alt="" class="img-fluid">
+        </div>
+    </section>
+
+    <div class="text-center mt-4">
+        <p class="small text-muted"> Made with ❤️ by Trùm mobile 👨‍💻 Thành viên: Nguyễn Phước Ngọc Hương, Lê
+            Thanh Bảo Trân, Vũ Cao Kỳ, Phạm Quỳnh Như</p>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

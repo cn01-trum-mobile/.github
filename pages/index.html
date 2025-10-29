@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CapdeCours</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* CSS TÙY CHỈNH VÀ BỘ MÀU MỚI */
@@ -94,15 +95,45 @@
             margin-bottom: 50px;
         }
 
+        .content-section h2 {
+            /* Thêm đường phân cách màu nhấn phụ */
+            border-bottom: 3px solid var(--et-accent-secondary);
+            padding-bottom: 15px;
+        }
+
         .et-dark-card {
             background-color: var(--et-card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            /* Border Vàng Đồng nhạt */
             border-radius: 12px;
             padding: 30px;
             text-align: left;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             height: 100%;
             color: var(--et-accent-text);
-            /* Chữ sáng trên card tối */
+
+            /* Đổ bóng nhẹ và hiệu ứng chuyển động */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .et-dark-card:hover {
+            /* Nâng card nhẹ lên khi di chuột */
+            transform: translateY(-5px);
+            /* Tăng cường đổ bóng */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            /* Có thể làm sáng nhẹ nền card */
+            background-color: #552117;
+            /* Màu đậm hơn một chút */
+        }
+
+        .et-btn-primary:hover {
+            /* Nâng card nhẹ lên khi di chuột */
+            transform: translateY(-3px);
+            /* Tăng cường đổ bóng */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            /* Có thể làm sáng nhẹ nền card */
+            background-color: #552117;
+            /* Màu đậm hơn một chút */
         }
 
         .et-dark-card h3 {
@@ -118,8 +149,8 @@
         }
 
         .icon-placeholder {
-            width: 100px;
-            height: 100px;
+            width: 70px;
+            height: 70px;
             background-color: rgba(255, 255, 255, 0.1);
             /* Icon nhạt */
             border-radius: 8px;
@@ -128,7 +159,11 @@
             align-items: center;
             justify-content: center;
             color: #ffffff;
-            font-size: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--et-accent-secondary);
+            /* Icon màu Vàng Đồng */
+            font-size: 1.8rem;
+            /* Tăng kích thước icon lên một chút */
         }
     </style>
 </head>
@@ -138,16 +173,18 @@
     <header class="border-bottom sticky-top" style="background-color: var(--et-bg-light);">
         <nav class="navbar navbar-expand-lg container-xl py-3">
             <img src="./assests/images/logo.png" height="50" class="px-2" alt="Logo">
-            <a class="navbar-brand fw-bold fs-4" style="color: var(--et-red-color);" href="#">CapdeCours</a>
+            <a class="navbar-brand fw-bold fs-4" style="color: var(--et-red-color);" href="index.html">CapdeCours</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link text-dark" href="#">Docs</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="#">Product</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="#">Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="product.html">Product</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link text-dark" href="#">Solutions</a></li> -->
                 </ul>
                 <div class="d-flex align-items-center">
-                    <a class="btn et-btn-secondary2 me-2" href="#">Wiki</a>
-                    <a class="btn et-btn-primary" href="#">Github Repo</a>
+                    <a class="btn et-btn-secondary2 me-2"
+                        href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Docs</a>
+                    <a class="btn et-btn-primary" href="https://github.com/cn01-trum-mobile/BTL-App-development">Github
+                        Repo</a>
                 </div>
             </div>
         </nav>
@@ -160,8 +197,9 @@
                 Ứng dụng chụp nhanh - lưu gọn - tìm dễ. Giúp sinh viên trong việc quản lý ảnh bài giảng của mình.
             </p>
             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mb-5">
-                <a class="btn et-btn-primary btn-lg px-4" href="#">Get Started for Free</a>
-                <a class="btn et-btn-secondary btn-lg px-4" href="#">Read the Docs</a>
+                <a class="btn et-btn-primary btn-lg px-4" href="product.html">Explore the App</a>
+                <a class="btn et-btn-secondary btn-lg px-4"
+                    href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Read the Docs</a>
             </div>
 
             <div class="my-5 rounded-4 overflow-hidden">
@@ -169,72 +207,137 @@
             </div>
 
             <div class="text-center mt-4">
-                <p class="small text-muted">👩‍💻👨‍💻 Enterprise needs? Talk to our team.</p>
+                <p class="small text-muted"> Made with ❤️ by Trùm mobile 👨‍💻 Thành viên: Nguyễn Phước Ngọc Hương, Lê
+                    Thanh Bảo Trân, Vũ Cao Kỳ, Phạm Quỳnh Như</p>
             </div>
         </div>
     </section>
 
     <section class="content-section">
         <div class="container-xl">
-            <h2>Build your app with the best tools in the universe</h2>
+            <h2 class="text-dark">Phân tích Dự án: Business Model Canvas</h2>
+
+            <h3 class="text-start fw-bold fs-4 mb-4"
+                style="color: var(--et-primary-color); border-bottom: 2px dashed #f0e6c5;">1. CORE BUSINESS (Cốt Lõi
+                Kinh Doanh)</h3>
+
+            <div class="row g-4 mb-5">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="et-dark-card">
+                        <div class="icon-placeholder"><i class="bi bi-exclamation-triangle-fill"></i></div>
+                        <h3>Vấn đề (Problem)</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li>• Khó khăn lưu trữ: Chụp ảnh nhanh nhưng mất thời gian ghi chép toàn bộ.</li>
+                            <li>• Quản lý kém: Ảnh bài giảng bị lẫn lộn trong thư viện điện thoại.</li>
+                            <li>• Tìm kiếm thủ công: Khó tra cứu lại ảnh theo môn học/buổi học.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="et-dark-card">
+                        <div class="icon-placeholder"><i class="bi bi-lightbulb-fill"></i></div>
+                        <h3>Giải pháp (Solution)</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li>• Ứng dụng chuyên biệt: Chụp và lưu ảnh bài giảng nhanh chóng.</li>
+                            <li>• Quản lý tự động: Sắp xếp ảnh theo môn học, buổi học trong thời khóa biểu.</li>
+                            <li>• Tìm kiếm thông minh: Dễ dàng tra cứu lại ảnh dựa trên môn học hoặc ngày chụp.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="et-dark-card">
+                        <div class="icon-placeholder"><i class="bi bi-gem"></i></div>
+                        <h3>Giá trị (Value Proposition)</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li>• Phân loại trực quan: Kho ảnh có hệ thống, dễ nhìn.</li>
+                            <li>• Trải nghiệm tiện lợi: Tìm kiếm ảnh nhanh chóng khi cần xem lại bài.</li>
+                            <li>• Ý nghĩa sử dụng: Chụp ảnh bài giảng hiệu quả và có hệ thống.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-start fw-bold fs-4 mb-4 mt-5"
+                style="color: var(--et-primary-color); border-bottom: 2px dashed #f0e6c5;">2. MARKET & ADVANTAGES (Thị
+                trường & Ưu thế)</h3>
+
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="et-dark-card">
+                        <div class="icon-placeholder"><i class="bi bi-lightning-charge-fill"></i></div>
+                        <h3>Ưu điểm (Advantages)</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li>• Tự động hóa: Chụp và phân loại ảnh tự động ngay tức thì.</li>
+                            <li>• Nhắc nhở thông minh: Phân loại cho ảnh chưa xác định.</li>
+                            <li>• Thao tác tối ưu: Nhanh gọn, phù hợp với nhịp độ giảng bài.</li>
+                            <li>• Thiết kế chuyên biệt: Liên kết thời khóa biểu, đặt tên theo môn học.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="et-dark-card">
+                        <div class="icon-placeholder"><i class="bi bi-people-fill"></i></div>
+                        <h3>Khách hàng (User Segments)</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li>• Sinh viên ĐH/CĐ: Cần quản lý khoa học, thường xuyên chụp bài giảng.</li>
+                            <li>• Học sinh phổ thông: Cần ôn tập nhiều môn, muốn lưu trữ tài liệu gọn gàng.</li>
+                            <li>• Người tham gia sự kiện: Cần ghi lại nội dung họp, hội thảo nhanh chóng.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="et-dark-card">
+                        <div class="icon-placeholder"><i class="bi bi-megaphone-fill"></i></div>
+                        <h3>Kênh (Channels)</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li>• Mạng xã hội sinh viên: Đăng clip demo trên TikTok, FB.</li>
+                            <li>• Cộng đồng học tập: Group ôn thi, diễn đàn, CLB học thuật.</li>
+                            <li>• Hợp tác trường học: Giới thiệu trong buổi định hướng tân sinh viên.</li>
+                            <li>• Hợp tác Micro-KOL trong lĩnh vực học tập.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-start fw-bold fs-4 mb-4 mt-5"
+                style="color: var(--et-primary-color); border-bottom: 2px dashed #f0e6c5;">3. FINANCE & METRICS (Tài
+                chính & Đo lường)</h3>
 
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="et-dark-card">
-                        <div class="icon-placeholder">SDK</div>
-                        <h3>Expo SDK</h3>
-                        <p>100+ production-ready libraries</p>
-                        <p class="small">Use the camera, send and receive push notifications, get automatic deep links,
-                            plus much much more...</p>
-                        <div class="mt-4"></div>
+                        <div class="icon-placeholder"><i class="bi bi-graph-up-arrow"></i></div>
+                        <h3>Thước đo (Metrics)</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li>• Người dùng hoạt động hàng tháng (MAU) & Tỷ lệ giữ chân (Retention Rate).</li>
+                            <li>• Số lượng ảnh được chụp và phân loại tự động thành công.</li>
+                            <li>• Tỷ lệ ảnh được xử lý thông qua nhắc nhở.</li>
+                            <li>• Tỷ lệ tìm kiếm ảnh thành công.</li>
+                        </ul>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6">
                     <div class="et-dark-card">
-                        <div class="icon-placeholder">NATIVE</div>
-                        <h3>Use React, Kotlin, Swift</h3>
-                        <p>Write native code with the Expo Modules API and config plugins.</p>
-                        <div class="mt-4"></div>
+                        <div class="icon-placeholder"><i class="bi bi-wallet-fill"></i></div>
+                        <h3>Chi phí (Costs)</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li>• Phát triển: Thiết kế UI/UX, lập trình iOS/Android.</li>
+                            <li>• Vận hành: Máy chủ, cloud storage.</li>
+                            <li>• Marketing: Hợp tác KOL, dựng video, bài viết.</li>
+                            <li>• Bảo trì: Sửa lỗi, nâng cấp tính năng.</li>
+                        </ul>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6">
                     <div class="et-dark-card">
-                        <div class="icon-placeholder">META</div>
-                        <h3>The only native framework recommended by Meta</h3>
-                        <p>An SDK 10 years in the making. Trusted by thousands of enterprises and startups.</p>
-                    </div>
-                </div>
-
-                <div class="col-12 mt-5">
-                    <h3 class="text-start fw-bold fs-4 mb-4" style="color: var(--et-text-dark);">Developer experience
-                    </h3>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="et-dark-card">
-                        <h3>Develop on your device</h3>
-                        <p>Develop on your phone, just like how your users will experience your app. Download **Expo
-                            Go**.</p>
-                        <div class="mt-4"></div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="et-dark-card">
-                        <h3>Inspect your bundle</h3>
-                        <p>Optimize your app visually with **Expo Atlas**.</p>
-                        <div class="mt-4"></div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="et-dark-card">
-                        <h3>Launch with a click</h3>
-                        <p>Start emulators and simulators without opening Android Studio or Xcode with **Expo Orbit**.
-                        </p>
-                        <div class="mt-4"></div>
+                        <div class="icon-placeholder"><i class="bi bi-cash-stack"></i></div>
+                        <h3>Dòng tiền (Revenue Streams)</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li>• Mô hình Premium: Chụp ảnh/Phân loại/Tìm kiếm nâng cao không giới hạn.</li>
+                            <li>• Quảng cáo chọn lọc: Hợp tác với thương hiệu giáo dục.</li>
+                            <li>• Gói theo nhóm: Ưu đãi cho nhóm học, lớp đăng ký chung.</li>
+                        </ul>
                     </div>
                 </div>
 
