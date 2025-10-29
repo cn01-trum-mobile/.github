@@ -230,20 +230,29 @@
 
     <header class="border-bottom sticky-top" style="background-color: var(--et-bg-light);">
         <nav class="navbar navbar-expand-lg container-xl py-3">
+
             <img src="./assests/images/logo.png" height="50" class="px-2" alt="Logo">
             <a class="navbar-brand fw-bold fs-4" style="color: var(--et-red-color);" href="index.html">CapdeCours</a>
-            <div class="collapse navbar-collapse">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavCollapse"
+                aria-controls="navbarNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavCollapse">
+
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link text-dark" href="product.html">Product</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link text-dark" href="#">Solutions</a></li> -->
                 </ul>
+
                 <div class="d-flex align-items-center">
                     <a class="btn et-btn-secondary2 me-2"
                         href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Docs</a>
                     <a class="btn et-btn-primary" href="https://github.com/cn01-trum-mobile/BTL-App-development">Github
                         Repo</a>
                 </div>
+
             </div>
         </nav>
     </header>
