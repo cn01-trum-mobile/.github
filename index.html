@@ -8,263 +8,6 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
         <style>
             /* CSS TÙY CHỈNH VÀ BỘ MÀU MỚI */
-            :root {
-                --et-card-bg: #6e4a3e;
-                /* Nền Card Đậm (Màu nhấn chính) */
-                --et-bg-light: #fff8e3;
-                /* Nền Chính (Trắng kem) */
-                --et-text-dark: #343a40;
-                /* Màu chữ mặc định trên nền sáng */
-                --et-accent-text: #e0e0e0;
-                /* Màu chữ trên nền card đậm */
-                --et-primary-color: #6e4a3e;
-                /* Màu cho nút và tiêu đề nổi bật */
-                --et-border-color: #e0e0e0;
-                /* Màu viền trên nền sáng */
-                --et-red-color: #ac3c00;
-            }
-
-            body {
-                background-color: var(--et-bg-light) !important;
-                color: var(--et-text-dark) !important;
-            }
-
-            /* 1. HEADER & HERO SECTION (Tương tự ảnh 1) */
-            .hero-section {
-                /* Đã thay đổi điểm bắt đầu gradient từ #FFE697 và điểm kết thúc là màu nền chính */
-                background: linear-gradient(0deg, #ffe697 0%, var(--et-bg-light) 100%);
-                padding: 120px 0;
-                text-align: center;
-            }
-
-            .hero-title {
-                font-size: 3.5rem;
-                font-weight: 800;
-                color: var(--et-red-color);
-            }
-
-            .hero-subtitle {
-                font-size: 1.25rem;
-                color: #6c757d;
-                max-width: 700px;
-                margin: 0 auto 30px;
-            }
-
-            .et-btn-primary {
-                background-color: var(--et-primary-color) !important;
-                border-color: var(--et-primary-color) !important;
-                color: #ffffff !important;
-                font-weight: bold;
-                padding: 10px 30px;
-            }
-
-            .et-btn-secondary {
-                border-color: var(--et-red-color) !important;
-                color: var(--et-red-color) !important;
-                font-weight: bold;
-                padding: 10px 30px;
-            }
-
-            .et-btn-secondary:hover {
-                background-color: var(--et-red-color) !important;
-                color: #ffffff !important;
-            }
-
-            .et-btn-secondary2 {
-                border-color: var(--et-red-color) !important;
-                color: var(--et-red-color) !important;
-                font-weight: bold;
-            }
-
-            .et-btn-secondary2:hover {
-                background-color: var(--et-red-color) !important;
-                color: #ffffff !important;
-            }
-
-            /* 2. CONTENT SECTION (Tương tự ảnh 2) */
-            .content-section {
-                background-color: var(--et-bg-light);
-                padding: 80px 0;
-                text-align: center;
-            }
-
-            .content-section h2 {
-                font-size: 2.5rem;
-                font-weight: 800;
-                margin-bottom: 50px;
-            }
-
-            .content-section h2 {
-                /* Thêm đường phân cách màu nhấn phụ */
-                border-bottom: 3px solid var(--et-accent-secondary);
-                padding-bottom: 15px;
-            }
-
-            .et-dark-card {
-                background-color: var(--et-card-bg);
-                border: 1px solid rgba(212, 175, 55, 0.4);
-                /* Border Vàng Đồng nhạt */
-                border-radius: 12px;
-                padding: 30px;
-                text-align: left;
-                height: 100%;
-                color: var(--et-accent-text);
-
-                /* Đổ bóng nhẹ và hiệu ứng chuyển động */
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .et-dark-card:hover {
-                /* Nâng card nhẹ lên khi di chuột */
-                transform: translateY(-5px);
-                /* Tăng cường đổ bóng */
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-                /* Có thể làm sáng nhẹ nền card */
-                background-color: #552117;
-                /* Màu đậm hơn một chút */
-            }
-
-            .et-btn-primary:hover {
-                /* Nâng card nhẹ lên khi di chuột */
-                transform: translateY(-3px);
-                /* Tăng cường đổ bóng */
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-                /* Có thể làm sáng nhẹ nền card */
-                background-color: #552117;
-                /* Màu đậm hơn một chút */
-            }
-
-            .et-dark-card h3 {
-                font-size: 1.5rem;
-                font-weight: 700;
-                margin-bottom: 15px;
-                color: #ffffff;
-                /* Tiêu đề trắng */
-            }
-
-            .et-dark-card p {
-                color: var(--et-accent-text);
-            }
-
-            .icon-placeholder {
-                width: 70px;
-                height: 70px;
-                background-color: rgba(255, 255, 255, 0.1);
-                /* Icon nhạt */
-                border-radius: 8px;
-                margin-bottom: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #ffffff;
-                background-color: rgba(255, 255, 255, 0.1);
-                color: var(--et-accent-secondary);
-                /* Icon màu Vàng Đồng */
-                font-size: 1.8rem;
-                /* Tăng kích thước icon lên một chút */
-            }
-
-            /* 3. NAV BAR TÙY CHỈNH */
-
-            /* THÊM ĐOẠN NÀY ĐỂ TẠO KHOẢNG CÁCH GIỮA CÁC TAB */
-            .et-navbar-custom .nav-item {
-                margin-inline-end: 15px; /* Hoặc 20px nếu muốn rộng hơn */
-            }
-            /* KẾT THÚC ĐOẠN THÊM */
-
-            .et-navbar-custom .nav-link {
-                /* Màu chữ mặc định là màu chữ tối trên nền sáng */
-                color: var(--et-text-dark) !important;
-                font-weight: 500;
-                padding: 8px 15px;
-                border-bottom: 2px solid transparent;
-                transition: all 0.3s ease;
-                border-radius: 5px;
-            }
-
-            .et-navbar-custom .nav-link:hover {
-                /* Thay đổi nền và màu chữ khi hover */
-                background-color: rgba(110, 74, 62, 0.1);
-                /* Màu nâu primary nhạt */
-                color: var(--et-primary-color) !important;
-            }
-
-            .et-navbar-custom .nav-item .active,
-            .et-navbar-custom .nav-item .active:hover {
-                /* Áp dụng cho liên kết đang hoạt động */
-                font-weight: 700;
-                /* In đậm */
-                color: var(--et-red-color) !important;
-                /* Màu đỏ nổi bật */
-                background-color: var(--et-bg-light) !important;
-                /* Đảm bảo nền là màu trắng kem */
-                border-bottom: 2px solid var(--et-red-color);
-                /* Viền dưới màu đỏ nổi bật */
-            }
-        </style>
-    </head>
-
-    <body>
-        <header class="border-bottom sticky-top" style="background-color: var(--et-bg-light)">
-            <nav class="navbar navbar-expand-lg container-xl py-3">
-                <img src="./assests/images/logo.png" height="50" class="px-2" alt="Logo" />
-                <a class="navbar-brand fw-bold fs-4" style="color: var(--et-red-color)" href="index.html">CapdeCours</a>
-
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavCollapse"
-                    aria-controls="navbarNavCollapse"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNavCollapse">
-                    <ul class="navbar-nav mx-auto et-navbar-custom">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="product.html">Product</a>
-                        </li>
-                    </ul>
-
-                    <div class="d-flex align-items-center">
-                        <a class="btn et-btn-secondary2 me-2" href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Docs</a>
-                        <a class="btn et-btn-primary" href="https://github.com/cn01-trum-mobile/BTL-App-development">Github Repo</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <section class="hero-section">
-            <div class="container-xl">
-                <h1 class="hero-title mb-4">
-                    Ứng dụng chụp và phân loại
-                    <br />
-                    ảnh bài giảng
-                </h1>
-                <p class="hero-subtitle mb-5">
-                    Vô tư chụp ảnh bài giảng trên lớp và để CapdeCours thay bạn phân loại và quản lý chúng. Hãy cùng nhau
-                    <strong>Chụp nhanh, Lưu Gọn, Tìm dễ</strong>
-                    nhé!
-                </p>
-
-                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mb-5">
-                    <a class="btn et-btn-primary btn-lg px-4" href="product.html">Explore the App</a>
-                    <a class="btn et-btn-secondary btn-lg px-4" href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Read the Docs</a>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CapdeCours</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* CSS TÙY CHỈNH VÀ BỘ MÀU MỚI */
         :root {
             --et-card-bg: #6E4A3E;
             /* Nền Card Đậm (Màu nhấn chính) */
@@ -482,9 +225,47 @@
             font-weight: 500;
             margin-top: 5px;
         }
-    </style>
-</head>
 
+            /* 3. NAV BAR TÙY CHỈNH */
+
+            /* THÊM ĐOẠN NÀY ĐỂ TẠO KHOẢNG CÁCH GIỮA CÁC TAB */
+            .et-navbar-custom .nav-item {
+                margin-inline-end: 15px; /* Hoặc 20px nếu muốn rộng hơn */
+            }
+            /* KẾT THÚC ĐOẠN THÊM */
+
+            .et-navbar-custom .nav-link {
+                /* Màu chữ mặc định là màu chữ tối trên nền sáng */
+                color: var(--et-text-dark) !important;
+                font-weight: 500;
+                padding: 8px 15px;
+                border-bottom: 2px solid transparent;
+                transition: all 0.3s ease;
+                border-radius: 5px;
+            }
+
+            .et-navbar-custom .nav-link:hover {
+                /* Thay đổi nền và màu chữ khi hover */
+                background-color: rgba(110, 74, 62, 0.1);
+                /* Màu nâu primary nhạt */
+                color: var(--et-primary-color) !important;
+            }
+
+            .et-navbar-custom .nav-item .active,
+            .et-navbar-custom .nav-item .active:hover {
+                /* Áp dụng cho liên kết đang hoạt động */
+                font-weight: 700;
+                /* In đậm */
+                color: var(--et-red-color) !important;
+                /* Màu đỏ nổi bật */
+                background-color: var(--et-bg-light) !important;
+                /* Đảm bảo nền là màu trắng kem */
+                border-bottom: 2px solid var(--et-red-color);
+                /* Viền dưới màu đỏ nổi bật */
+            }
+        </style>
+    </head>
+            
     <body>
         <header class="border-bottom sticky-top" style="background-color: var(--et-bg-light)">
             <nav class="navbar navbar-expand-lg container-xl py-3">
@@ -503,37 +284,39 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNavCollapse">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark" href="product.html">Product</a></li>
+                    <ul class="navbar-nav mx-auto et-navbar-custom">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="product.html">Product</a>
+                        </li>
                     </ul>
 
-                <div class="d-flex align-items-center">
-                    <a class="btn et-btn-secondary2 me-2"
-                        href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Docs</a>
-                    <a class="btn et-btn-primary" href="https://github.com/cn01-trum-mobile/BTL-App-development">Github
-                        Repo</a>
+                    <div class="d-flex align-items-center">
+                        <a class="btn et-btn-secondary2 me-2" href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Docs</a>
+                        <a class="btn et-btn-primary" href="https://github.com/cn01-trum-mobile/BTL-App-development">Github Repo</a>
+                    </div>
                 </div>
-
-                <div class="my-5 rounded-4 overflow-hidden">
-                    <img src="./assests/images/onboarding.png" alt="Onboarding Image" class="img-fluid" />
-                </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
         <section class="hero-section">
             <div class="container-xl">
-                <h1 class="hero-title mb-4">Quản lý ảnh chụp dễ dàng</h1>
-                <p class="hero-subtitle mb-5">Ứng dụng chụp nhanh - lưu gọn - tìm dễ. Giúp sinh viên trong việc quản lý ảnh bài giảng của mình.</p>
+                <h1 class="hero-title mb-4">
+                    Ứng dụng chụp và phân loại
+                    <br />
+                    ảnh bài giảng
+                </h1>
+                <p class="hero-subtitle mb-5">
+                    Vô tư chụp ảnh bài giảng trên lớp và để CapdeCours thay bạn phân loại và quản lý chúng. Hãy cùng nhau
+                    <strong>Chụp nhanh, Lưu Gọn, Tìm dễ</strong>
+                    nhé!
+                </p>
+
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mb-5">
                     <a class="btn et-btn-primary btn-lg px-4" href="product.html">Explore the App</a>
                     <a class="btn et-btn-secondary btn-lg px-4" href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Read the Docs</a>
-                </div>
-
-                <div class="my-5 rounded-4 overflow-hidden">
-                    <img src="./assests/images/onboarding.png" alt="Onboarding Image" class="img-fluid" />
-                </div>
 
         </div>
     </section>
@@ -809,9 +592,6 @@
                     </div>
                 </div>
 
-                <h3 class="text-start fw-bold fs-4 mb-4 mt-5" style="color: var(--et-primary-color); border-bottom: 2px dashed #f0e6c5">
-                    3. FINANCE & METRICS (Tài chính & Đo lường)
-                </h3>
                 <h3 class="text-start fw-bold fs-4 mb-4 mt-5" style="color: var(--et-primary-color); border-bottom: 2px dashed #f0e6c5">
                     3. FINANCE & METRICS (Tài chính & Đo lường)
                 </h3>
