@@ -223,39 +223,81 @@
             height: 100%;
             border: 0;
         }
+        
+        /* 3. NAV BAR TÙY CHỈNH */
+        
+/* THÊM ĐOẠN NÀY ĐỂ TẠO KHOẢNG CÁCH GIỮA CÁC TAB */
+.et-navbar-custom .nav-item {
+    margin-inline-end: 15px; /* Hoặc 20px nếu muốn rộng hơn */
+}
+/* KẾT THÚC ĐOẠN THÊM */
+
+.et-navbar-custom .nav-link {
+    /* Màu chữ mặc định là màu chữ tối trên nền sáng */
+    color: var(--et-text-dark) !important;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.et-navbar-custom .nav-link:hover {
+    /* Thay đổi nền và màu chữ khi hover */
+    background-color: rgba(110, 74, 62, 0.1);
+    /* Màu nâu primary nhạt */
+    color: var(--et-primary-color) !important;
+}
+
+.et-navbar-custom .nav-item .active,
+.et-navbar-custom .nav-item .active:hover {
+    /* Áp dụng cho liên kết đang hoạt động */
+    font-weight: 700;
+    /* In đậm */
+    color: var(--et-red-color) !important;
+    /* Màu đỏ nổi bật */
+    background-color: var(--et-bg-light) !important;
+    /* Đảm bảo nền là màu trắng kem */
+    border-bottom: 2px solid var(--et-red-color);
+    /* Viền dưới màu đỏ nổi bật */
+}
     </style>
 </head>
 
 <body>
 
     <header class="border-bottom sticky-top" style="background-color: var(--et-bg-light);">
-        <nav class="navbar navbar-expand-lg container-xl py-3">
+    <nav class="navbar navbar-expand-lg container-xl py-3">
 
-            <img src="./assests/images/logo.png" height="50" class="px-2" alt="Logo">
-            <a class="navbar-brand fw-bold fs-4" style="color: var(--et-red-color);" href="index.html">CapdeCours</a>
+        <img src="./assests/images/logo.png" height="50" class="px-2" alt="Logo">
+        <a class="navbar-brand fw-bold fs-4" style="color: var(--et-red-color);" href="index.html">CapdeCours</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavCollapse"
-                aria-controls="navbarNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavCollapse"
+            aria-controls="navbarNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarNavCollapse">
+        <div class="collapse navbar-collapse" id="navbarNavCollapse">
 
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="product.html">Product</a></li>
-                </ul>
+            <ul class="navbar-nav mx-auto et-navbar-custom">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="product.html">Product</a>
+                </li>
+            </ul>
 
-                <div class="d-flex align-items-center">
-                    <a class="btn et-btn-secondary2 me-2"
-                        href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Docs</a>
-                    <a class="btn et-btn-primary" href="https://github.com/cn01-trum-mobile/BTL-App-development">Github
-                        Repo</a>
-                </div>
-
+            <div class="d-flex align-items-center">
+                <a class="btn et-btn-secondary2 me-2"
+                    href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Docs</a>
+                <a class="btn et-btn-primary" href="https://github.com/cn01-trum-mobile/BTL-App-development">Github
+                    Repo</a>
             </div>
-        </nav>
-    </header>
+
+        </div>
+    </nav>
+</header>
     <section class="hero-section">
         <!-- ĐÃ SỬA: Bỏ d-flex ở đây, dùng align-items-start để căn nội dung lên trên -->
         <div class="container-xl row align-items-start mx-auto g-5">
@@ -276,7 +318,8 @@
                 </p>
 
                 <div class="d-grid gap-3 d-sm-flex mb-5 justify-content-center justify-content-lg-start w-100">
-                    <a class="btn et-btn-primary btn-lg px-4" href="https://www.behance.net/gallery/237512783/CapDeCours">View More On Behance</a>
+                    <a class="btn et-btn-primary btn-lg px-4"
+                        href="https://www.behance.net/gallery/237512783/CapDeCours">View More On Behance</a>
                     <a class="btn et-btn-secondary btn-lg px-4"
                         href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Read the Docs</a>
                 </div>
@@ -292,28 +335,17 @@
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="content-section mb-3">
         <div class="container-xl">
             <h2 class="text-dark">Core Feature</h2>
             <img src="./assests/images/onboarding.png" alt="onboarding" class="img-fluid">
-        </div>
 
-        </div>
-    </section>
-    <section class="content-section">
-
-        <div class="container-xl">
-
-            <div class="text-center mb-12">
-                <h2 class="text-dark">From capture to classification</h2>
-            </div>
-
-            <div class="row g-4 mb-5">
+            <div class="row g-4 mt-5">
 
                 <div class="col-lg-4 col-md-6">
                     <div class="et-dark-card">
                         <div class="icon-placeholder">1</div>
-                        <h3>Capture: Chụp ảnh nhanh</h3>
+                        <h3>Snap Fast</h3>
                         <p>
                             Dùng camera tích hợp của CapdeCours để chụp bài giảng ngay tức thì.
                             Ảnh được lưu trữ tạm thời trong ứng dụng.
@@ -323,7 +355,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="et-dark-card">
                         <div class="icon-placeholder">2</i></div>
-                        <h3>Smart Save: Phân loại thông minh</h3>
+                        <h3>Save Smart</h3>
                         <p>Hệ thống tự động so sánh vị trí, thời gian chụp với thời khóa biểu
                             để gán nhãn môn học và buổi học chính xác.</p>
                     </div>
@@ -331,61 +363,20 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="et-dark-card">
                         <div class="icon-placeholder">3</div>
-                        <h3>Find Easy: Tìm kiếm dễ dàng</h3>
+                        <h3>Find Easy</h3>
                         <p>Tất cả ảnh đã được sắp xếp vào thư mục. Dùng thanh tìm kiếm để tra
                             cứu ảnh theo môn học hoặc ngày trong vài giây.</p>
                     </div>
                 </div>
             </div>
-
-
-            <div class="row m-0 p-0">
-
-                <div class="d-flex justify-content-between col-lg-4 col-md-12 align-items-center mt-4">
-                    <!-- Mockup 1: Capture -->
-                    <div id="mockup-page2-1" class="phone-frame">
-                        <div class="phone-screen">
-                            <img id="screen-page2-1" src="./assests/images/Photo-taking.png" alt="Mockup bước 1"
-                                class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="d-flex justify-content-between col-lg-4 col-md-12 align-items-center mt-4">
-                    <!-- Mockup 2: Save Smart -->
-                    <div id="mockup-page2-2" class="phone-frame">
-                        <div class="phone-screen">
-                            <img id="screen-page2-2" src="./assests/images/Photo-taken.png" alt="Mockup bước 2"
-                                class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-between col-lg-4 col-md-12 align-items-center mt-4">
-                    <!-- Mockup 3: Find Easy -->
-                    <div id="mockup-page2-3" class="phone-frame">
-                        <div class="phone-screen">
-                            <img id="screen-page2-3" src="./assests/images/Photo-saved.png" alt="Mockup bước 3"
-                                class="">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-
         </div>
-        </div>
+
     </section>
 
-    <section class="hero-section">
+    <section class="content-section mt-0 pt-0">
+        <h2 class="hero-title text-dark fs-1 mb-5 mt-0">From capture to classification</h2>
         <div class="containter-xl">
             <img src="./assests/images/taking-steps.png" alt="" class="img-fluid">
-        </div>
-        <div class="containter-xl">
             <img src="./assests/images/gallery.png" alt="" class="img-fluid">
         </div>
     </section>
