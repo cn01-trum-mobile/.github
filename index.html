@@ -256,33 +256,492 @@
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mb-5">
                     <a class="btn et-btn-primary btn-lg px-4" href="product.html">Explore the App</a>
                     <a class="btn et-btn-secondary btn-lg px-4" href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Read the Docs</a>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapdeCours</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* CSS TÙY CHỈNH VÀ BỘ MÀU MỚI */
+        :root {
+            --et-card-bg: #6E4A3E;
+            /* Nền Card Đậm (Màu nhấn chính) */
+            --et-bg-light: #FFF8E3;
+            /* Nền Chính (Trắng kem) */
+            --et-text-dark: #343a40;
+            /* Màu chữ mặc định trên nền sáng */
+            --et-accent-text: #E0E0E0;
+            /* Màu chữ trên nền card đậm */
+            --et-primary-color: #6E4A3E;
+            /* Màu cho nút và tiêu đề nổi bật */
+            --et-border-color: #e0e0e0;
+            /* Màu viền trên nền sáng */
+            --et-red-color: #AC3C00;
+        }
+
+        body {
+            background-color: var(--et-bg-light) !important;
+            color: var(--et-text-dark) !important;
+        }
+
+        /* 1. HEADER & HERO SECTION (Tương tự ảnh 1) */
+        .hero-section {
+            /* Đã thay đổi điểm bắt đầu gradient từ #FFE697 và điểm kết thúc là màu nền chính */
+            background: linear-gradient(0deg, #FFE697 0%, var(--et-bg-light) 100%);
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--et-red-color);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #6c757d;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .et-btn-primary {
+            background-color: var(--et-primary-color) !important;
+            border-color: var(--et-primary-color) !important;
+            color: #ffffff !important;
+            font-weight: bold;
+            padding: 10px 30px;
+        }
+
+        .et-btn-secondary {
+            border-color: var(--et-red-color) !important;
+            color: var(--et-red-color) !important;
+            font-weight: bold;
+            padding: 10px 30px;
+        }
+
+        .et-btn-secondary:hover {
+            background-color: var(--et-red-color) !important;
+            color: #ffffff !important;
+        }
+
+        .et-btn-secondary2 {
+            border-color: var(--et-red-color) !important;
+            color: var(--et-red-color) !important;
+            font-weight: bold;
+        }
+
+        .et-btn-secondary2:hover {
+            background-color: var(--et-red-color) !important;
+            color: #ffffff !important;
+        }
+
+        /* 2. CONTENT SECTION (Tương tự ảnh 2) */
+        .content-section {
+            background-color: var(--et-bg-light);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+        }
+
+        .content-section h2 {
+            /* Thêm đường phân cách màu nhấn phụ */
+            border-bottom: 3px solid var(--et-accent-secondary);
+            padding-bottom: 15px;
+        }
+
+        .et-dark-card {
+            background-color: var(--et-card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            /* Border Vàng Đồng nhạt */
+            border-radius: 12px;
+            padding: 30px;
+            text-align: left;
+            height: 100%;
+            color: var(--et-accent-text);
+
+            /* Đổ bóng nhẹ và hiệu ứng chuyển động */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .et-dark-card:hover {
+            /* Nâng card nhẹ lên khi di chuột */
+            transform: translateY(-5px);
+            /* Tăng cường đổ bóng */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            /* Có thể làm sáng nhẹ nền card */
+            background-color: #552117;
+            /* Màu đậm hơn một chút */
+        }
+
+        .et-btn-primary:hover {
+            /* Nâng card nhẹ lên khi di chuột */
+            transform: translateY(-3px);
+            /* Tăng cường đổ bóng */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            /* Có thể làm sáng nhẹ nền card */
+            background-color: #552117;
+            /* Màu đậm hơn một chút */
+        }
+
+        .et-dark-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+            /* Tiêu đề trắng */
+        }
+
+        .et-dark-card p {
+            color: var(--et-accent-text);
+        }
+
+        .icon-placeholder {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Icon nhạt */
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--et-accent-secondary);
+            /* Icon màu Vàng Đồng */
+            font-size: 1.8rem;
+            /* Tăng kích thước icon lên một chút */
+        }
+
+        .project-detail-card {
+            background-color: var(--et-bg-light);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            /* Border Vàng Đồng nhạt */
+            border-radius: 12px;
+            padding: 30px;
+            text-align: left;
+            height: 100%;
+            color: black;
+
+            /* Đổ bóng nhẹ và hiệu ứng chuyển động */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-detail-card:hover {
+            /* Nâng card nhẹ lên khi di chuột */
+            transform: translateY(-5px);
+            /* Tăng cường đổ bóng */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            /* Màu đậm hơn một chút */
+        }
+
+        .project-detail-card h3 {
+            color: var(--et-red-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .project-detail-card h3 i {
+            margin-right: 10px;
+            color: var(--et-primary-color);
+        }
+
+        .summary-heading {
+            font-size: 1.5rem;
+            /* Giảm nhẹ để phù hợp với cột 4 */
+            font-weight: 700;
+            color: var(--et-primary-color) !important;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px dashed #f0e6c5;
+        }
+
+        /* Các chỉ số Metric trong cột 4, cần tối ưu không gian hơn */
+        .metric-dark-card .metric-value {
+            font-size: 2.0rem;
+            /* Giảm nhẹ hơn nữa */
+            font-weight: 800;
+            color: var(--et-red-color);
+            line-height: 1.2;
+        }
+
+        .metric-dark-card .metric-label {
+            font-size: 0.85rem;
+            /* Chữ nhỏ hơn */
+            color: black;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="border-bottom sticky-top" style="background-color: var(--et-bg-light);">
+        <nav class="navbar navbar-expand-lg container-xl py-3">
+
+            <img src="./assests/images/logo.png" height="50" class="px-2" alt="Logo">
+            <a class="navbar-brand fw-bold fs-4" style="color: var(--et-red-color);" href="index.html">CapdeCours</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavCollapse"
+                aria-controls="navbarNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavCollapse">
+
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="product.html">Product</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center">
+                    <a class="btn et-btn-secondary2 me-2"
+                        href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Docs</a>
+                    <a class="btn et-btn-primary" href="https://github.com/cn01-trum-mobile/BTL-App-development">Github
+                        Repo</a>
                 </div>
 
                 <div class="my-5 rounded-4 overflow-hidden">
                     <img src="./assests/images/onboarding.png" alt="Onboarding Image" class="img-fluid" />
                 </div>
             </div>
-        </section>
+        </nav>
+    </header>
 
-        <section class="content-section">
-            <div class="container-xl">
-                <h2 class="text-dark">Business Model Canvas</h2>
+    <section class="hero-section">
+        <div class="container-xl">
+            <h1 class="hero-title mb-4">Quản lý ảnh chụp dễ dàng</h1>
+            <p class="hero-subtitle mb-5">
+                Ứng dụng chụp nhanh - lưu gọn - tìm dễ. Giúp sinh viên trong việc quản lý ảnh bài giảng của mình.
+            </p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mb-5">
+                <a class="btn et-btn-primary btn-lg px-4" href="product.html">Explore the App</a>
+                <a class="btn et-btn-secondary btn-lg px-4"
+                    href="https://github.com/cn01-trum-mobile/BTL-App-development/wiki">Read the Docs</a>
+            </div>
 
-                <h3 class="text-start fw-bold fs-4 mb-4" style="color: var(--et-primary-color); border-bottom: 2px dashed #f0e6c5">
-                    1. CORE BUSINESS (Cốt Lõi Kinh Doanh)
-                </h3>
+            <div class="my-5 rounded-4 overflow-hidden">
+                <img src="./assests/images/onboarding.png" alt="Onboarding Image" class="img-fluid">
+            </div>
 
-                <div class="row g-4 mb-5">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="et-dark-card">
-                            <div class="icon-placeholder"><i class="bi bi-exclamation-triangle-fill"></i></div>
-                            <h3>Vấn đề (Problem)</h3>
-                            <ul class="list-unstyled mb-0">
-                                <li>• Khó khăn lưu trữ: Chụp ảnh nhanh nhưng mất thời gian ghi chép toàn bộ.</li>
-                                <li>• Quản lý kém: Ảnh bài giảng bị lẫn lộn trong thư viện điện thoại.</li>
-                                <li>• Tìm kiếm thủ công: Khó tra cứu lại ảnh theo môn học/buổi học.</li>
-                            </ul>
+        </div>
+    </section>
+
+
+    <section id="project-summary" class="hero-section py-5" style="background-color: var(--et-light-accent);">
+        <div class="container-xl">
+            <h2 class="hero-title my-5 text-black">Tổng quan Dự án & Lộ trình</h2>
+
+            <div class="row g-5">
+
+                <div class="col-lg-4">
+                    <h3 class="summary-heading">Mục tiêu cốt lõi</h3>
+
+                    <div class="table-responsive rounded-3 shadow-sm">
+                        <table class="table table-sm table-hover mb-0 small" style="background-color: white;">
+                            <tbody>
+                                <tr style="background-color: var(--et-light-accent);">
+                                    <td class="px-2 py-2 text-center"
+                                        style="width: 10%; color: var(--et-primary-color);"><i
+                                            class="bi bi-clock-fill fw-bold"></i></td>
+                                    <td class="px-2 py-2" style="width: 90%;">
+                                        <p class="text-dark mb-0 fw-bold">Tiện lợi & Tốc độ</p>
+                                        <span class="text-muted small">Tạo công cụ thân thiện, giúp ghi chú nhanh
+                                            chóng.</span>
+                                    </td>
+                                </tr>
+                                <tr style="background-color: white;">
+                                    <td class="px-2 py-2 text-center" style="color: var(--et-primary-color);"><i
+                                            class="bi bi-archive-fill fw-bold"></i></td>
+                                    <td class="px-2 py-2">
+                                        <p class="text-dark mb-0 fw-bold">Quản lý tri thức</p>
+                                        <span class="text-muted small">Giúp sinh viên quản lý ảnh bài giảng hiệu quả,
+                                            loại bỏ lộn xộn.</span>
+                                    </td>
+                                </tr>
+                                <tr style="background-color: var(--et-light-accent);">
+                                    <td class="px-2 py-2 text-center" style="color: var(--et-primary-color);"><i
+                                            class="bi bi-plus-circle-fill fw-bold"></i></td>
+                                    <td class="px-2 py-2">
+                                        <p class="text-dark mb-0 fw-bold">Tiềm năng mở rộng</p>
+                                        <span class="text-muted small">Mở rộng sang các tính năng nâng cao như OCR, chia
+                                            sẻ nhóm.</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <h3 class="summary-heading">Các Mốc Phát triển</h3>
+
+                    <div class="table-responsive rounded-3 shadow-sm">
+                        <table class="table table-hover mb-0 small">
+                            <thead class="text-white" style="background-color: var(--et-card-bg);">
+                                <tr>
+                                    <th scope="col" class="px-2 py-2">Mốc</th>
+                                    <th scope="col" class="px-2 py-2">Mục tiêu</th>
+                                    <th scope="col" class="px-2 py-2">Deadline</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: var(--et-light-accent);">
+                                    <td class="px-2 py-2 fw-bold">A1</td>
+                                    <td class="px-2 py-2">Setup ban đầu</td>
+                                    <td class="px-2 py-2">10/10/25</td>
+                                </tr>
+                                <tr style="background-color: white;">
+                                    <td class="px-2 py-2 fw-bold">MVP</td>
+                                    <td class="px-2 py-2">Chụp & phân loại cơ bản</td>
+                                    <td class="px-2 py-2">15/11/25</td>
+                                </tr>
+                                <tr style="background-color: var(--et-light-accent);">
+                                    <td class="px-2 py-2 fw-bold">Beta</td>
+                                    <td class="px-2 py-2">Tìm kiếm & nhắc nhở</td>
+                                    <td class="px-2 py-2">10/12/25</td>
+                                </tr>
+                                <tr style="background-color: white;">
+                                    <td class="px-2 py-2 fw-bold">Final</td>
+                                    <td class="px-2 py-2">Demo ổn định</td>
+                                    <td class="px-2 py-2">27/12/25</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <h3 class="summary-heading">Chỉ số Hiệu suất</h3>
+
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="metric-dark-card">
+                                <div class="metric-value">30</div>
+                                <div class="metric-label">Tổng tải app</div>
+                            </div>
                         </div>
+
+                        <div class="col-6">
+                            <div class="metric-dark-card">
+                                <div class="metric-value">20%</div>
+                                <div class="metric-label">Quay lại sau 7 ngày</div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="metric-dark-card">
+                                <div class="metric-value">90%</div>
+                                <div class="metric-label">Phân loại đúng</div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="metric-dark-card">
+                                <div class="metric-value">5s</div>
+                                <div class="metric-label">Tốc độ xử lý</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container-xl mt-5">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="project-detail-card">
+                        <h3><i class="bi bi-patch-question-fill"></i> Vấn đề</h3>
+                        <p class="mb-2">
+                            Sinh viên thường xuyên gặp khó khăn trong việc quản lý và tìm kiếm ảnh chụp bảng, slide
+                            bài giảng do bị lẫn lộn với ảnh cá nhân trong thư viện điện thoại.
+                        </p>
+                        <ul class="">
+                            <li>Mất thời gian tìm lại tài liệu.</li>
+                            <li>Thiếu hệ thống phân loại theo môn học.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="project-detail-card">
+                        <h3><i class="bi bi-patch-question-fill"></i> Giải pháp</h3>
+                        <p class="mb-2">
+
+                            Phát triển một ứng dụng chụp ảnh chuyên biệt cho bài giảng với giao diện tối giản.
+                            Đồng bộ thời khóa biểu (hoặc Google Calendar) để gắn ảnh với lịch học.
+                            Ảnh chụp sẽ được tự động phân loại theo:
+
+
+                        </p>
+                        <ul class="">
+                            <li>Môn học
+                            </li>
+                            <li>Buổi học
+                            </li>
+                            <li>Thời gian chụp
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="project-detail-card">
+                        <h3><i class="bi bi-gear-fill"></i> Công nghệ</h3>
+                        <ul class=" mb-0">
+                            <li> Frontend: React Native.</li>
+                            <li> Ngôn ngữ: Javascript.</li>
+                            <li> Backend/DB: MongoDB.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="project-detail-card">
+                        <h3><i class="bi bi-person-circle"></i> Đội ngũ</h3>
+                        <p class="fw-bold mb-2 text-dark">Trùm Mobile Team (CN01)</p>
+                        <ul class=" mb-0 ">
+                            <li>Nguyễn Phước Ngọc Hương</li>
+                            <li>Lê Thanh Bảo Trân</li>
+                            <li>Vũ Cao Kỳ</li>
+                            <li>Phạm Quỳnh Như</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container-xl">
+            <h2 class="text-dark">Phân tích Dự án: Business Model Canvas</h2>
+
+            <h3 class="text-start fw-bold fs-4 mb-4"
+                style="color: var(--et-primary-color); border-bottom: 2px dashed #f0e6c5;">1. CORE BUSINESS (Cốt Lõi
+                Kinh Doanh)</h3>
+
+            <div class="row g-4 mb-5">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="et-dark-card">
+                        <div class="icon-placeholder"><i class="bi bi-exclamation-triangle-fill"></i></div>
+                        <h3>Vấn đề (Problem)</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li>• Khó khăn lưu trữ: Chụp ảnh nhanh nhưng mất thời gian ghi chép toàn bộ.</li>
+                            <li>• Quản lý kém: Ảnh bài giảng bị lẫn lộn trong thư viện điện thoại.</li>
+                            <li>• Tìm kiếm thủ công: Khó tra cứu lại ảnh theo môn học/buổi học.</li>
+                        </ul>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="et-dark-card">
@@ -392,10 +851,17 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                <p class="small text-muted">Made with ❤️ by Trùm mobile 👨‍💻 Thành viên: Nguyễn Phước Ngọc Hương, Lê Thanh Bảo Trân, Vũ Cao Kỳ, Phạm Quỳnh Như</p>
-            </div>
-        </section>
+        </div>
+    </section>
+    <div class="text-center mt-4">
+        <p class="small text-muted"> Made with ❤️ by Trùm mobile 👨‍💻 Thành viên: Nguyễn Phước Ngọc Hương, Lê
+            Thanh Bảo Trân, Vũ Cao Kỳ, Phạm Quỳnh Như</p>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="script.js"></script>
