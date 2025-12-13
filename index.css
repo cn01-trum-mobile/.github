@@ -65,6 +65,7 @@ body {
   border-color: var(--et-red-color) !important;
   color: var(--et-red-color) !important;
   font-weight: bold;
+  padding: 10px 30px;
 }
 
 .et-btn-secondary2:hover {
@@ -117,12 +118,10 @@ body {
 }
 
 .et-btn-primary:hover {
-  /* Nâng card nhẹ lên khi di chuột */
-  transform: translateY(-3px);
   /* Tăng cường đổ bóng */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   /* Có thể làm sáng nhẹ nền card */
-  background-color: #552117;
+  background-color: #552117 !important;
   /* Màu đậm hơn một chút */
 }
 
