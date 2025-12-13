@@ -1,255 +1,286 @@
 /* CSS TÙY CHỈNH VÀ BỘ MÀU MỚI */
 :root {
-  --et-card-bg: #6e4a3e;
-  /* Nền Card Đậm (Màu nhấn chính) */
-  --et-bg-light: #fff8e3;
-  /* Nền Chính (Trắng kem) */
-  --et-text-dark: #343a40;
-  /* Màu chữ mặc định trên nền sáng */
-  --et-accent-text: #e0e0e0;
-  /* Màu chữ trên nền card đậm */
-  --et-primary-color: #6e4a3e;
-  /* Màu cho nút và tiêu đề nổi bật */
-  --et-border-color: #e0e0e0;
-  /* Màu viền trên nền sáng */
-  --et-red-color: #ac3c00;
+	--et-card-bg: #6e4a3e;
+	/* Nền Card Đậm (Màu nhấn chính) */
+	--et-bg-light: #fff8e3;
+	/* Nền Chính (Trắng kem) */
+	--et-text-dark: #343a40;
+	/* Màu chữ mặc định trên nền sáng */
+	--et-accent-text: #e0e0e0;
+	/* Màu chữ trên nền card đậm */
+	--et-primary-color: #6e4a3e;
+	/* Màu cho nút và tiêu đề nổi bật */
+	--et-border-color: #e0e0e0;
+	/* Màu viền trên nền sáng */
+	--et-red-color: #ac3c00;
 }
 
 body {
-  background-color: var(--et-bg-light) !important;
-  color: var(--et-text-dark) !important;
+	background-color: var(--et-bg-light) !important;
+	color: var(--et-text-dark) !important;
 }
 
 /* 1. HEADER & HERO SECTION (Tương tự ảnh 1) */
 .hero-section {
-  /* Đã thay đổi điểm bắt đầu gradient từ #FFE697 và điểm kết thúc là màu nền chính */
-  background: linear-gradient(0deg, #ffe697 0%, var(--et-bg-light) 100%);
-  padding: 120px 0;
-  text-align: center;
+	/* Đã thay đổi điểm bắt đầu gradient từ #FFE697 và điểm kết thúc là màu nền chính */
+	background: linear-gradient(0deg, #ffe697 0%, var(--et-bg-light) 100%);
+	padding: 120px 0;
+	text-align: center;
 }
 
 .hero-title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: var(--et-red-color);
+	font-size: 3.5rem;
+	font-weight: 800;
+	color: var(--et-red-color);
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  color: #6c757d;
-  max-width: 700px;
-  margin: 0 auto 30px;
+	font-size: 1.25rem;
+	color: #6c757d;
+	max-width: 700px;
+	margin: 0 auto 30px;
 }
 
 .et-btn-primary {
-  background-color: var(--et-primary-color) !important;
-  border-color: var(--et-primary-color) !important;
-  color: #ffffff !important;
-  font-weight: bold;
-  padding: 10px 30px;
+	background-color: var(--et-primary-color) !important;
+	border-color: var(--et-primary-color) !important;
+	color: #ffffff !important;
+	font-weight: bold;
+	padding: 10px 30px;
 }
 
 .et-btn-secondary {
-  border-color: var(--et-red-color) !important;
-  color: var(--et-red-color) !important;
-  font-weight: bold;
-  padding: 10px 30px;
+	border-color: var(--et-red-color) !important;
+	color: var(--et-red-color) !important;
+	font-weight: bold;
+	padding: 10px 30px;
 }
 
 .et-btn-secondary:hover {
-  background-color: var(--et-red-color) !important;
-  color: #ffffff !important;
+	background-color: var(--et-red-color) !important;
+	color: #ffffff !important;
 }
 
 .et-btn-secondary2 {
-  border-color: var(--et-red-color) !important;
-  color: var(--et-red-color) !important;
-  font-weight: bold;
-  padding: 10px 30px;
+	border-color: var(--et-red-color) !important;
+	color: var(--et-red-color) !important;
+	font-weight: bold;
+	padding: 10px 30px;
 }
 
 .et-btn-secondary2:hover {
-  background-color: var(--et-red-color) !important;
-  color: #ffffff !important;
+	background-color: var(--et-red-color) !important;
+	color: #ffffff !important;
 }
 
 /* 2. CONTENT SECTION (Tương tự ảnh 2) */
 .content-section {
-  background-color: var(--et-bg-light);
-  padding: 80px 0;
-  text-align: center;
+	background-color: var(--et-bg-light);
+	padding: 80px 0;
+	text-align: center;
 }
 
 .content-section h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 50px;
+	font-size: 2.5rem;
+	font-weight: 800;
+	margin-bottom: 50px;
 }
 
 .content-section h2 {
-  /* Thêm đường phân cách màu nhấn phụ */
-  border-bottom: 3px solid var(--et-accent-secondary);
-  padding-bottom: 15px;
+	/* Thêm đường phân cách màu nhấn phụ */
+	border-bottom: 3px solid var(--et-accent-secondary);
+	padding-bottom: 15px;
 }
 
 .et-dark-card {
-  background-color: var(--et-card-bg);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  /* Border Vàng Đồng nhạt */
-  border-radius: 12px;
-  padding: 30px;
-  text-align: left;
-  height: 100%;
-  color: var(--et-accent-text);
+	background-color: var(--et-card-bg);
+	border: 1px solid rgba(212, 175, 55, 0.4);
+	/* Border Vàng Đồng nhạt */
+	border-radius: 12px;
+	padding: 30px;
+	text-align: left;
+	height: 100%;
+	color: var(--et-accent-text);
 
-  /* Đổ bóng nhẹ và hiệu ứng chuyển động */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+	/* Đổ bóng nhẹ và hiệu ứng chuyển động */
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .et-dark-card:hover {
-  /* Nâng card nhẹ lên khi di chuột */
-  transform: translateY(-5px);
-  /* Tăng cường đổ bóng */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  /* Có thể làm sáng nhẹ nền card */
-  background-color: #552117;
-  /* Màu đậm hơn một chút */
+	/* Nâng card nhẹ lên khi di chuột */
+	transform: translateY(-5px);
+	/* Tăng cường đổ bóng */
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+	/* Có thể làm sáng nhẹ nền card */
+	background-color: #552117;
+	/* Màu đậm hơn một chút */
 }
 
 .et-btn-primary:hover {
-  /* Tăng cường đổ bóng */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  /* Có thể làm sáng nhẹ nền card */
-  background-color: #552117 !important;
-  /* Màu đậm hơn một chút */
+	/* Tăng cường đổ bóng */
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	/* Có thể làm sáng nhẹ nền card */
+	background-color: #552117 !important;
+	/* Màu đậm hơn một chút */
 }
 
 .et-dark-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #ffffff;
-  /* Tiêu đề trắng */
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 15px;
+	color: #ffffff;
+	/* Tiêu đề trắng */
 }
 
 .et-dark-card p {
-  color: var(--et-accent-text);
+	color: var(--et-accent-text);
 }
 
 .icon-placeholder {
-  width: 70px;
-  height: 70px;
-  background-color: rgba(255, 255, 255, 0.1);
-  /* Icon nhạt */
-  border-radius: 8px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: var(--et-accent-secondary);
-  /* Icon màu Vàng Đồng */
-  font-size: 1.8rem;
-  /* Tăng kích thước icon lên một chút */
+	width: 70px;
+	height: 70px;
+	background-color: rgba(255, 255, 255, 0.1);
+	/* Icon nhạt */
+	border-radius: 8px;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	background-color: rgba(255, 255, 255, 0.1);
+	color: var(--et-accent-secondary);
+	/* Icon màu Vàng Đồng */
+	font-size: 1.8rem;
+	/* Tăng kích thước icon lên một chút */
 }
 
 .project-detail-card {
-  background-color: var(--et-bg-light);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  /* Border Vàng Đồng nhạt */
-  border-radius: 12px;
-  padding: 30px;
-  text-align: left;
-  height: 100%;
-  color: black;
+	background-color: var(--et-bg-light);
+	border: 1px solid rgba(212, 175, 55, 0.4);
+	/* Border Vàng Đồng nhạt */
+	border-radius: 12px;
+	padding: 30px;
+	text-align: left;
+	height: 100%;
+	color: black;
 
-  /* Đổ bóng nhẹ và hiệu ứng chuyển động */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+	/* Đổ bóng nhẹ và hiệu ứng chuyển động */
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-detail-card:hover {
-  /* Nâng card nhẹ lên khi di chuột */
-  transform: translateY(-5px);
-  /* Tăng cường đổ bóng */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  /* Màu đậm hơn một chút */
+	/* Nâng card nhẹ lên khi di chuột */
+	transform: translateY(-5px);
+	/* Tăng cường đổ bóng */
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+	/* Màu đậm hơn một chút */
 }
 
 .project-detail-card h3 {
-  color: var(--et-red-color);
-  font-weight: 700;
-  margin-bottom: 15px;
+	color: var(--et-red-color);
+	font-weight: 700;
+	margin-bottom: 15px;
 }
 
 .project-detail-card h3 i {
-  margin-right: 10px;
-  color: var(--et-primary-color);
+	margin-right: 10px;
+	color: var(--et-primary-color);
 }
 
 .summary-heading {
-  font-size: 1.5rem;
-  /* Giảm nhẹ để phù hợp với cột 4 */
-  font-weight: 700;
-  color: var(--et-primary-color) !important;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px dashed #f0e6c5;
+	font-size: 1.5rem;
+	/* Giảm nhẹ để phù hợp với cột 4 */
+	font-weight: 700;
+	color: var(--et-primary-color) !important;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 2px dashed #f0e6c5;
 }
 
 /* Các chỉ số Metric trong cột 4, cần tối ưu không gian hơn */
 .metric-dark-card .metric-value {
-  font-size: 2rem;
-  /* Giảm nhẹ hơn nữa */
-  font-weight: 800;
-  color: var(--et-red-color);
-  line-height: 1.2;
+	font-size: 2rem;
+	/* Giảm nhẹ hơn nữa */
+	font-weight: 800;
+	color: var(--et-red-color);
+	line-height: 1.2;
 }
 
 .metric-dark-card .metric-label {
-  font-size: 0.85rem;
-  /* Chữ nhỏ hơn */
-  color: black;
-  font-weight: 500;
-  margin-top: 5px;
+	font-size: 0.85rem;
+	/* Chữ nhỏ hơn */
+	color: black;
+	font-weight: 500;
+	margin-top: 5px;
 }
 
 /* 3. NAV BAR TÙY CHỈNH */
 
 /* THÊM ĐOẠN NÀY ĐỂ TẠO KHOẢNG CÁCH GIỮA CÁC TAB */
 .et-navbar-custom .nav-item {
-  margin-inline-end: 15px; /* Hoặc 20px nếu muốn rộng hơn */
+	margin-inline-end: 15px; /* Hoặc 20px nếu muốn rộng hơn */
 }
 /* KẾT THÚC ĐOẠN THÊM */
 
 .et-navbar-custom .nav-link {
-  /* Màu chữ mặc định là màu chữ tối trên nền sáng */
-  color: var(--et-text-dark) !important;
-  font-weight: 500;
-  padding: 8px 15px;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease;
-  border-radius: 5px;
+	/* Màu chữ mặc định là màu chữ tối trên nền sáng */
+	color: var(--et-text-dark) !important;
+	font-weight: 500;
+	padding: 8px 15px;
+	border-bottom: 2px solid transparent;
+	transition: all 0.3s ease;
+	border-radius: 5px;
 }
 
 .et-navbar-custom .nav-link:hover {
-  /* Thay đổi nền và màu chữ khi hover */
-  background-color: rgba(110, 74, 62, 0.1);
-  /* Màu nâu primary nhạt */
-  color: var(--et-primary-color) !important;
+	/* Thay đổi nền và màu chữ khi hover */
+	background-color: rgba(110, 74, 62, 0.1);
+	/* Màu nâu primary nhạt */
+	color: var(--et-primary-color) !important;
 }
 
 .et-navbar-custom .nav-item .active,
 .et-navbar-custom .nav-item .active:hover {
-  /* Áp dụng cho liên kết đang hoạt động */
-  font-weight: 700;
-  /* In đậm */
-  color: var(--et-red-color) !important;
-  /* Màu đỏ nổi bật */
-  background-color: var(--et-bg-light) !important;
-  /* Đảm bảo nền là màu trắng kem */
-  border-bottom: 2px solid var(--et-red-color);
-  /* Viền dưới màu đỏ nổi bật */
+	/* Áp dụng cho liên kết đang hoạt động */
+	font-weight: 700;
+	/* In đậm */
+	color: var(--et-red-color) !important;
+	/* Màu đỏ nổi bật */
+	background-color: var(--et-bg-light) !important;
+	/* Đảm bảo nền là màu trắng kem */
+	border-bottom: 2px solid var(--et-red-color);
+	/* Viền dưới màu đỏ nổi bật */
+}
+
+/* Custom badge styling */
+.badge-member {
+	background-color: var(--et-card-bg) !important; /* Brown color */
+	color: white !important;
+	border: none;
+	border-radius: 8px;
+	padding: 0.5rem 1rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 4px rgba(139, 69, 19, 0.2);
+	text-decoration: none;
+}
+
+/* Hover effect */
+.badge-member:hover {
+	background-color: #a0522d !important; /* Lighter brown on hover */
+	color: white !important;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
+	text-decoration: none;
+}
+
+/* Active/focus state */
+.badge-member:focus,
+.badge-member:active {
+	background-color: #654321 !important; /* Darker brown */
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.4);
 }
