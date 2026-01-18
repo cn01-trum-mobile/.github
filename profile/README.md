@@ -11,7 +11,7 @@ Nhóm gồm 4 thành viên:
 ---
 
 ## 📱 Dự án tiêu biểu
-### [BTL-App-development](https://github.com/cn01-trum-mobile/BTL-App-development)
+### [CapdeCours](https://github.com/cn01-trum-mobile/BTL-App-development)
 **Ứng dụng quản lý ảnh bài giảng thông minh cho sinh viên**
 
 Sinh viên thường chụp ảnh bài giảng nhưng khó sắp xếp và tìm lại.  
